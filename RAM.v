@@ -19,17 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-parameter data_w = 8;  // 8-bit data width
-parameter adr_w = 3;  // 2^3 = 8 locations
-parameter size = 8;  // # of memory locations = 8
-integer i;
-
 module RAM (
     input clk, rst, w,
     input [7:0] data_in,
     input [(adr_w-1) : 0] data_adr,  // 8 locations
     output reg [(data_w-1) : 0] data_out
 );
+    
+parameter data_w = 8;  // 8-bit data width
+parameter adr_w = 3;  // 2^3 = 8 locations
+parameter size = 8;  // # of memory locations = 8
+integer i;
 
 reg [(data_w-1) : 0] mem [(size-1) : 0];  // 8x8 RAM: 8 locations, 8 bits each
 
